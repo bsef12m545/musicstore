@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddUser</title>
+</head>
+<body>
+    <div>
+
+        @if(@ViewBag.s=="failed")
+        {
+            <script>alert("@ViewBag.message");</script>
+            <script>window.location='/User/Register'</script>
+        }
+        else if(@ViewBag.s=="Success")
+        {
+            <script>alert("@ViewBag.message2");</script>
+            <script>window.location='/User/Index'</script>
+        }
+        else if(@ViewBag.s=="error")
+        {
+            <script>alert("@ViewBag.message1");</script>
+            <script>window.location='/User/Register'</script>
+        }
+        
+    </div>
+</body>
+</html>

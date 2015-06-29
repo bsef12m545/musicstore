@@ -1,0 +1,106 @@
+<style>
+        body {
+            background-image: url("/Images/back2.png");
+            image-orientation: auto;
+            background-repeat: no-repeat;
+            position:relative;
+            background-repeat:repeat-y;
+
+        }
+
+        #logo {
+            margin-left: 5%;
+
+        }
+
+        #form {
+            margin-left: 60%;
+        }
+        #srch-btn:hover
+        {
+            background-color:orange;
+        }
+        #search
+        {
+            width:70%;
+        }
+        #option {
+            margin-left: 25%;
+            margin: 0.5%;
+        }
+
+        #logo:hover {
+            background-color: orange;
+            border-radius: 4px 4px 4px 4px;
+        }
+
+        #top-nav {
+            background-color:black;
+        }
+        ul#menu li a {
+            background-color: black;
+            color: #E6AE3D;
+            padding: 10px 20px;
+            border-radius: 4px 4px 0 0;
+            margin: 1px;
+        }
+
+        ul#menu li a:hover
+        {
+            background-color: orange;
+            color:black;
+        }
+        #sheet
+        {
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 5%;
+            margin-bottom:3%;
+            border-radius: 5px;
+            background-color:black;
+            border: 1px solid black;
+            opacity:0.8;
+            min-height:500px;
+
+        }
+        #sheet h2
+        {
+            font-weight:600;
+            color:orange;
+            margin-top:10%;
+            margin-left:6%;
+        }
+
+        #sheet h4
+        {
+            color:orange;
+        }
+
+        #sheet button
+        {
+            color:orange;
+            margin-left:8%;
+        }
+        #sheet button:hover
+        {
+            color: black;
+            background-color:orange;
+        }
+        #sheet p
+        {
+            color:orange;
+        }
+        #sheet form
+        {
+            margin-left:10%;
+        }
+        footer
+        {
+            background-color: black;
+            color: orange;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+
+    </style>

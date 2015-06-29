@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "View Songs Admin-Panel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using Music_Store.Models
+
+@if(Session["admin"]!=null)
+{
+    <div class="container" id="sheet" style="width:80%;margin-top:2%;">
+    <h2 style="margin-left:40%;margin-top:5%;margin-bottom:5%;">All Songs Detail</h2>
+    <table class="table table-bordered table-hover" style="margin-left:6%;margin-top:3%;width:90%;">
+        <thead style="font-weight:700">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Singer</th>
+                <th>Artist</th>
+                <th>Duration</th>
+                <th>UploadBy</th>
+                <th>Downloads</th>
+                <th>Favourites</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var s in Model)
+                {
+                    <tr>
+                        <td>@s.Id</td>
+                        <td>@s.name</td>
+                        <td>@s.singer</td>
+                        <td>@s.artist</td>
+                        <td>@(s.duration / 60)</td>
+                        <td>@s.uploadBy</td>
+                        <td>@s.downloads</td>
+                        <td>@s.favourites</td>
+                        <td><a class="btn btn-danger" href="/Admin/DeleteSong/@s.Id">Delete</a><a class="btn btn-success" href="/Admin/Update/@s.Id">Update</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+}
+

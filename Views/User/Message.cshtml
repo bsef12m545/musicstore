@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Message</title>
+</head>
+<body>
+    <div>
+        @if(@ViewBag.error=="yes")
+        {
+            <script>alert("@ViewBag.message1")</script>
+            <script>window.location='/User/Contact'</script>
+        }
+        else if(@ViewBag.error=="no")
+        {
+            <script>alert("@ViewBag.message")</script>
+            <script>window.location='/User/Index'</script>
+        }
+            
+    </div>
+</body>
+</html>

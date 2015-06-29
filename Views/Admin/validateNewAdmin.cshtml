@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add New Admin</title>
+</head>
+<body>
+    <div>
+
+        @if (@ViewBag.s == "failed")
+        {
+            <script>alert("@ViewBag.message");</script>
+            <script>window.location = '/Admin/addAdmin'</script>
+        }
+        else if (@ViewBag.s == "Success")
+        {
+            <script>alert("@ViewBag.message2");</script>
+            <script>window.location = '/Admin/Home'</script>
+        }
+
+    </div>
+</body>
+</html>

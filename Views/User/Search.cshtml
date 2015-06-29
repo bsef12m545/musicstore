@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Music_Store.Models
+
+@if (Session["user"] != null)
+{
+    <script>
+        function like(s) {
+            var val = $('#like' + s).text();
+            if (val1 == "yes") {
+                if (val == "Like") {
+                    $('#totallikes' + s).load('/User/Like/?s=' + s);
+                    $('#like' + s).text("UnLike");
+                }
+                else if (val == "UnLike") {
+                    $('#totallikes' + s).load('/User/UnLike/?s=' + s);
+                    $('#like' + s).text("Like");
+                }
+            }
+        }
+        function saveComment(s) {
+            var com = $('#comment').val();
+            $.post('/User/Comment/?comment=' + com + "&s=" + s, function (data) {
+                $('#showcomment').append(data);
+                $('#comment').val("");
+            });
+        }
+    </script>
+}
+
+<script>
+    function Category() {
+        $('#search').val("");
+        var cat = $('#category').val();
+        $('#songs').load('/User/Explore2/?category=' + cat);
+    }
+
+    function Search() {
+        var search = $('#search').val();
+        var cat = $('#category').val();
+        search = search.replace(/ /g, '%20');
+        $('#songs').load('/User/Search/?search=' + search + "&category=" + cat);
+    }
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-xs-5">
+            @foreach (SongsInfo song in ViewBag.searchSongs)
+            {
+                <div style="margin-left:16.5%;">
+                    <label>@song.name</label><br />
+                    <audio controls="controls" style="width:80%;">
+                        <source src="~/Songs/@song.name.ToLower()" type="audio/mpeg" />
+                    </audio><br />
+                </div>
+                <div class="btn btn-group" style="margin-left:16%;">
+                    <label id="@("totallikes"+song.Id)">@song.Likes.Count() likes</label>
+                    <button id="@("like"+song.Id)" name="Like" class="btn-default btn-xs" onclick="like(@song.Id);">Like</button>
+                    <button name="addtoplaylist" class="btn-success btn-xs"><span class="glyphicon glyphicon-music"></span>&nbsp;Add to playlist</button>
+                </div>
+                 <div>
+                    <textarea name="comment" id="comment" placeholder="type Comments..." style="margin-left:17%;width:45%;"></textarea><br />
+                    <button name="postcom" id="postcom" onclick="saveComment(@song.Id)" class="btn-primary btn-xs" style="margin-left:47.5%;"><span class="glyphicon glyphicon-comment"></span>&nbsp;Post Comment</button>
+                </div>
+
+            }
+        </div>
+        <div class="col-md-4 col-xs-7">
+
+        </div>
+    </div>
+</div>

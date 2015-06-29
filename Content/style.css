@@ -1,0 +1,89 @@
+body{
+background-image:url("/Images/body.png");
+    background-attachment:fixed;
+
+}
+#search{
+width:300px;
+margin-left:-15%;
+}
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+  }
+
+        ul#menu li a {
+            background-color: black;
+            color: #E6AE3D;
+            border-radius: 4px 4px 4px 4px;
+            margin: 2px;
+            margin-top:4px;
+            padding:10px 15px 10px 15px;
+        }
+
+        ul#menu li a:hover
+        {
+            background-color: orange;
+            color:black;
+        }
+        #sheet
+        {
+            margin-top:10%;
+            margin-bottom:3%;
+            margin-left: 10%;
+            margin-right: 10%;
+            min-height:450px;
+            border-radius: 5px;
+            background-color:black;
+            border: 1px solid black;
+            opacity:0.9;
+            color:orange;
+
+        }
+        #sheet h2
+        {
+            font-weight:600;
+            color:orange;
+            margin-top:2%;
+            margin-left:6%;
+        }
+
+        #sheet h4
+        {
+            color:orange;
+        }
+
+        #sheet button
+        {
+            color:orange;
+            margin-left:8%;
+        }
+        #sheet button:hover
+        {
+            color: black;
+            background-color:orange;
+        }
+        #sheet p
+        {
+            color:orange;
+        }
+        #sheet form
+        {
+            margin-left:10%;
+            margin-top:5%;
+        }
+        footer
+        {
+            background-color: black;
+            color: orange;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .album
+        {
+            background-color: #222;margin-bottom: 30px;
+            margin-left:5%;
+            color:orange;
+        }

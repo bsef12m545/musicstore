@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if(Session["admin"]!=null)
+{
+    <div class="row" id="sheet" style="margin-top:2%;">
+    <h2 style="margin-left:30%;margin-top:5%;margin-bottom:10%;">Welcome to Your Website</h2>
+    <h5 style="margin-left:8%;">Here You can Perform Following Activities</h5><br />
+    <ul style="margin-left:8%;">
+        <li>View Users</li>
+        <li> Delete Users</li>
+        <li>View Songs</li>
+        <li>Delete Songs</li>
+        <li>Upload Songs</li>
+        <li>Add New User</li>
+    </ul>
+</div>
+}
+
+

@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Delete Song";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container" id="sheet" style="width:80%;">
+    <h2 style="margin-left:40%;margin-top:5%;margin-bottom:10%;">Delete Song</h2>
+    <ul>
+        <li style="margin-left:7%;margin-top:3%;">To delete a user select user and then press Delete button.</li>
+    </ul>
+    <table class="table table-bordered table-hover" style="margin-left:6%;margin-top:3%;width:90%;">
+        <thead style="font-weight:700">
+            <tr>
+                <th>Select</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Singer</th>
+                <th>Artist</th>
+                <th>Duration</th>
+                <th>UploadBy</th>
+                <th>Downloads</th>
+                <th>Favourites</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (Music_Store.Models.SongsInfo s in @ViewBag.allsongs)
+                {
+                    <tr>
+                        <td><input type="radio" name="rad" id="@s.Id" /></td>
+                        <td>@s.Id</td>
+                        <td>@s.name</td>
+                        <td>@s.singer</td>
+                        <td>@s.artist</td>
+                        <td>@(s.duration / 60)</td>
+                        <td>@s.uploadBy</td>
+                        <td>@s.downloads</td>
+                        <td>@s.favourites</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+        <input type="submit" value="Delete" style="margin-left:82%;" /><br /><br /><br />
+</div>
+
+
+
+

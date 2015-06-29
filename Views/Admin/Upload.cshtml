@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using Music_Store.Models
+
+@if(Session["admin"]!=null)
+{
+    <div class="container" id="sheet" style="margin-top:2%;width:80%;">
+    <h2 style="margin-left:40%;margin-top:5%;margin-bottom:10%;">Upload New Song</h2>
+    <form enctype="multipart/form-data" class="navbar-form pull" action="/User/UploadSong" method="post" id="upload" style="height:48%;">
+        Singer Name:<input type="text" name="singerName" placeholder="Singer Name" id="singername" style="margin-left:2%;" required /><br /><br />
+        Uploaded By:<input type="text" name="uploadBy" placeholder="Uploaded By" id="uploadBy" style="margin-left:2%;" required /><br /><br />
+        Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="category" name="category" class="form-control" style="border-color:orange;color:orange;">
+            <option>ChillOut</option>
+            <option>Hip Hop</option>
+            <option>Rock</option>
+            <option>Jazz</option>
+            <option>Festival</option>
+            <option>Party</option>
+            <option>Pop</option>
+            <option>Bass</option>
+            <option>Beat</option>
+            <option>Classical</option>
+            <option>Club</option>
+            <option>Trance</option>
+            <option>Techno</option>
+            <option>EDM</option>
+            <option>Electronic</option>
+        </select><br /><br />
+        <input type="file" name="uploadedfile" value="Choose file" id="choose" max="1" style="margin-left:11%;" /><br /><br />
+        <input type="submit" style="margin-left:11%;" class="btn btn-default" value="Upload" />
+    </form>
+
+</div>
+  
+}
+

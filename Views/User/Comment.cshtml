@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Comment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Music_Store.Models.Comment>
+
+<div>
+    @foreach(var c in Model)
+    {
+        <div style="margin-left:20%;">
+            <p style="font-weight:bold">@ViewBag.username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@c.com</p>
+        </div>
+    }
+</div>
